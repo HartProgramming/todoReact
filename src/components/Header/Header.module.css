@@ -1,0 +1,11 @@
+.header {
+    color: white;
+    font-size: 48px;
+    text-align: center;
+  }
+  
+  .headerdiv{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  }

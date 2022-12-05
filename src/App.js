@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import classes from "./App.css";
+import React, { useCallback, useEffect, useState } from "react";
+import Header from "./components/Header/Header";
+import Entry from "./components/Entry/Entry";
+import ListItem from "./components/ListItem/ListItem";
 
 function App() {
+  const [data, setData] = useState();
+  const [arr, setArr] = useState([]);
+  const [cool, setCool] = useState([])
+  const [remove, setRemove] = useState(false);
+
+  useEffect(() => {
+    if(data !== undefined){
+    arr.push(data)
+    setTimeout(() => {
+      setCool(arr)
+      console.log(cool)
+    }, 500);
+      
+    }
+  }, [data, arr])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Entry data={setData} />
+    </>
   );
 }
 
